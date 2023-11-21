@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { DateTime } = require("luxon");
+
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema(
@@ -22,6 +23,10 @@ const postSchema = new Schema(
     isPublished: {
       type: Boolean,
       default: false,
+    },
+    author: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }
