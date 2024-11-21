@@ -19,18 +19,18 @@ const commentSchema = new Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 commentSchema.virtual("createdAt_formatted").get(function () {
   return DateTime.fromJSDate(this.createdAt).toLocaleString(
-    DateTime.DATETIME_SHORT
+    DateTime.DATETIME_SHORT,
   );
 });
 
 commentSchema.virtual("updatedAt_formatted").get(function () {
   return DateTime.fromJSDate(this.updatedAt).toLocaleString(
-    DateTime.DATETIME_SHORT
+    DateTime.DATETIME_SHORT,
   );
 });
 
